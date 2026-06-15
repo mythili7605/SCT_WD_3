@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Dev Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient background decorative blobs -->
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+
+<div class="quiz-container">
+    
+    <!-- Active Quiz Screen -->
+    <div id="quiz-screen">
+        <div class="quiz-header">
+            <span class="badge">Tech Quiz</span>
+            <div class="high-score-wrapper">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path><path d="M12 2a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"></path></svg>
+                <span>Best: <span id="high-score-val">0</span></span>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-info">
+                <span>Question <strong id="current-q-num">1</strong> of <strong id="total-q-num">3</strong></span>
+                <span class="score-badge">Score: <strong id="live-score">0</strong></span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progress-bar-fill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <div class="timer-section">
+            <div class="timer-bar-bg">
+                <div id="timer-bar-fill" class="timer-bar-fill" style="width: 100%;"></div>
+            </div>
+            <div class="timer-info">
+                <svg class="icon timer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Time Left: <strong id="timer-text">15s</strong></span>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h2 id="question">Question Here</h2>
+        </div>
+
+        <div id="answer-buttons" class="answer-grid">
+            <!-- Dynamically populated buttons -->
+        </div>
+
+        <div class="footer-section">
+            <button id="next-btn" class="nav-btn">
+                <span>Next Question</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="result-screen" class="hidden">
+        <div class="result-header">
+            <div class="congrats-trophy">
+                <svg class="trophy-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path><path d="M12 2a4 4 0 0 0-4 4v5a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"></path></svg>
+            </div>
+            <h2 id="result-title">Quiz Completed!</h2>
+            <p id="result-feedback">Excellent effort!</p>
+        </div>
+
+        <div class="result-card">
+            <div class="result-stat-row">
+                <span>Final Score</span>
+                <strong id="final-score-text">0 / 0</strong>
+            </div>
+            <div class="result-stat-row">
+                <span>Accuracy</span>
+                <strong id="accuracy-text">0%</strong>
+            </div>
+            <div class="result-stat-row">
+                <span>Average Speed</span>
+                <strong id="avg-speed-text">0.0s / Q</strong>
+            </div>
+            <div class="result-stat-row">
+                <span>Performance Rank</span>
+                <strong id="rank-badge" class="rank-badge">Novice</strong>
+            </div>
+        </div>
+
+        <div class="leaderboard-card">
+            <h3>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Recent Scores
+            </h3>
+            <ul id="score-history">
+                <!-- Scores from localStorage -->
+            </ul>
+            <button id="clear-scores-btn" class="text-btn">Clear History</button>
+        </div>
+
+        <button id="restart-btn" class="nav-btn restart-btn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+            <span>Play Again</span>
+        </button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
