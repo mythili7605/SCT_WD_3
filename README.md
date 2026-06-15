@@ -1,84 +1,66 @@
-Quiz Game Application
+# Quiz Game Application (SCT_WD_3)
 
-Project Description
+## Project Description
 
 A dynamic and interactive Quiz Game Application built using HTML, CSS, and Vanilla JavaScript. The application presents multiple-choice questions, allows users to select answers, calculates the score, and displays the final result at the end of the quiz.
 
-Features
+## Features
 
 - Multiple-choice questions
 - Interactive answer selection
 - Instant feedback for correct and incorrect answers
+- 15-second countdown timer per question
 - Score tracking system
-- Final score display
+- Final score display with accuracy and speed stats
+- Performance rank badge
+- High score tracking using Local Storage
+- Recent scores leaderboard
 - Restart quiz functionality
 - Responsive and user-friendly interface
 
-Technologies Used
+## Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript (Vanilla JS)
 
-Learning Outcomes
+## Learning Outcomes
 
-DOM Manipulation
+**DOM Manipulation** — Dynamically update questions, answers, and results on the webpage.
 
-Learned how to dynamically update questions, answers, and results on the webpage.
+**Event Handling** — Implemented click events for answer selection and quiz navigation.
 
-Event Handling
+**Arrays and Objects** — Stored quiz questions and answers using JavaScript arrays and objects.
 
-Implemented click events for answer selection and quiz navigation.
+**Dynamic Content Rendering** — Generated questions and answer options dynamically based on quiz data.
 
-Arrays and Objects
+**Conditional Logic** — Used conditions to validate answers and calculate scores.
 
-Stored quiz questions and answers using JavaScript arrays and objects.
+**Score Calculation** — Tracked user performance and displayed the final score at the end of the quiz.
 
-Dynamic Content Rendering
+## Project Structure
 
-Generated questions and answer options dynamically based on quiz data.
-
-Conditional Logic
-
-Used conditions to validate answers and calculate scores.
-
-Score Calculation
-
-Tracked user performance and displayed the final score at the end of the quiz.
-
-Basic Web Development Concepts
-
-Combined HTML, CSS, and JavaScript to build a complete interactive web application.
-
-Project Structure
-
-quiz-game/
+```
+SCT_WD_3/
 │
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+```
 
-How to Run
+## How to Run
 
 1. Download or clone the repository.
 2. Open the project folder.
-3. Open "index.html" in any modern web browser.
-4. Answer the questions and view your final score.
+3. Open `index.html` in any modern web browser, **or**
+4. Serve it locally with: `npx http-server -p 8080` and open `http://localhost:8080`.
+5. Answer the questions and view your final score.
 
-Future Enhancements
-
-- Timer for each question
-- Question categories
-- Difficulty levels
-- High score tracking using Local Storage
-- Randomized question order
-- Sound effects and animations
-
-Author
+## Author
 
 Mythili
 
-License
+## License
 
 This project is created for educational and internship task purposes.
