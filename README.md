@@ -1,6 +1,15 @@
 # Quiz Game Application (SCT_WD_3)
 https://sct-wd-3-mbgu.vercel.app/
 
+[![Vercel Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://sct-wd-3-sand.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge&logo=googlechrome)](https://sct-wd-3-sand.vercel.app)
+
+## 🌐 Live Preview
+
+> **[https://sct-wd-3-sand.vercel.app](https://sct-wd-3-sand.vercel.app)**
+
+---
+
 ## Project Description
 
 A dynamic and interactive Quiz Game Application built using HTML, CSS, and Vanilla JavaScript. The application presents multiple-choice questions, allows users to select answers, calculates the score, and displays the final result at the end of the quiz.
